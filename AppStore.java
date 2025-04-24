@@ -1,39 +1,26 @@
 public class AppStore {
-    // -----------------------------------------------------------------
-    // Constantes
-    // -----------------------------------------------------------------
     public final static int CANT_MIN_ROMPECABEZAS = 25;
     public final static int CANT_MIN_DEPORTE = 20;
     public final static int CANT_MIN_ACCION = 12;
     public final static double DESCUENTO_1 = 0.20;
     public final static double DESCUENTO_2 = 0.15;
 
-    // Nuevas constantes
     public final static double PORCENTAJE_MINIMO = 0.25;
     public final static int LICENCIAS_MINIMAS_DEPORTE = 10;
     public final static int LICENCIAS_MINIMAS_ACCION = 15;
 
-    // -----------------------------------------------------------------
-    // Atributos
-    // -----------------------------------------------------------------
     private Juego juego1;
     private Juego juego2;
     private Juego juego3;
     private Juego juego4;
 
-    // -----------------------------------------------------------------
-    // Constructores
-    // -----------------------------------------------------------------
     public AppStore() {
-        juego1 = new Juego("Candy Crush", Juego.Categoria.ROMPECABEZAS, 3000, 300, 50);
-        juego2 = new Juego("Flow", Juego.Categoria.ROMPECABEZAS, 5500, 250, 15);
-        juego3 = new Juego("FIFA", Juego.Categoria.DEPORTE, 7500, 850, 80);
-        juego4 = new Juego("Clash of Clans", Juego.Categoria.ACCION, 2000, 1000, 36);
+        juego1 = new Juego("Candy Crush", Juego.Categoria.ROMPECABEZAS, 30, 300, 50);
+        juego2 = new Juego("Flow", Juego.Categoria.ROMPECABEZAS, 55, 250, 15);
+        juego3 = new Juego("FIFA", Juego.Categoria.DEPORTE, 75, 850, 80);
+        juego4 = new Juego("Clash of Clans", Juego.Categoria.ACCION, 20, 1000, 36);
     }
 
-    // -----------------------------------------------------------------
-    // Métodos
-    // -----------------------------------------------------------------
     public Juego darJuego1() { return juego1; }
     public Juego darJuego2() { return juego2; }
     public Juego darJuego3() { return juego3; }
@@ -105,9 +92,9 @@ public class AppStore {
 
         double totalConDescuento = totalVenta - descuento;
 
-        return "El precio total de la venta sería: $" + totalVenta + ".\n" +
-                "El descuento sería de: $" + descuento + "\n" +
-                "El precio con descuento sería: $" + totalConDescuento + ".";
+        return "El precio total de la venta sería: $" + totalVenta + " USD.\n" +
+                "El descuento sería de: $" + descuento + " USD.\n" +
+                "El precio con descuento sería: $" + totalConDescuento + " USD.";
     }
 
     public String darJuegoMenosVendido() {
