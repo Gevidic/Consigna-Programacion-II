@@ -1,42 +1,19 @@
-public class Juego
-{
+public class Juego {
 
-    public enum Categoria
-    {
-
+    public enum Categoria {
         ROMPECABEZAS,
-
-
         DEPORTE,
-
-
         ACCION
     }
 
-
     private String nombre;
-
-
     private Categoria categoria;
-
-
-    private int precio;
-
-
+    private int precio; // en dólares
     private int tamanio;
-
-
-
     private int cantidadLicencias;
-
-
     private int cantidadVendidas;
 
-
-
-
-    public Juego( String pNombre, Categoria pCategoria, int pPrecio, int pTamanio, int pCantidadLicencias)
-    {
+    public Juego(String pNombre, Categoria pCategoria, int pPrecio, int pTamanio, int pCantidadLicencias) {
         nombre = pNombre;
         categoria = pCategoria;
         precio = pPrecio;
@@ -45,58 +22,40 @@ public class Juego
         cantidadVendidas = 0;
     }
 
-
-    public String darNombre( )
-    {
+    public String darNombre() {
         return nombre;
     }
 
-
-    public Categoria darCategoria( )
-    {
+    public Categoria darCategoria() {
         return categoria;
     }
 
-
-    public int darPrecio( )
-    {
+    public int darPrecio() {
         return precio;
     }
 
-
-    public int darTamanio( )
-    {
+    public int darTamanio() {
         return tamanio;
     }
 
-
-    public int darCantidadLicencias( )
-    {
+    public int darCantidadLicencias() {
         return cantidadLicencias;
     }
 
-
-    public int darCantidadVendidas( )
-    {
+    public int darCantidadVendidas() {
         return cantidadVendidas;
     }
 
-
-    public void comprarLicencias( int pCantidad )
-    {
+    public void comprarLicencias(int pCantidad) {
         cantidadLicencias += pCantidad;
     }
 
-
-    public boolean venderLicencias( int pCantidad )
-    {
-        boolean respuesta = false;
-        if( cantidadLicencias >= pCantidad )
-        {
+    public boolean venderLicencias(int pCantidad) {
+        if (cantidadLicencias >= pCantidad) {
             cantidadLicencias -= pCantidad;
             cantidadVendidas += pCantidad;
-            respuesta = true;
+            return true;
         }
-        return respuesta;
+        return false;
     }
 }
